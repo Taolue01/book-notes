@@ -1,7 +1,9 @@
 // Question 4 
-/* 替换字符串
-
-*/
+/**
+ * 请实现一个函数，把字符串中的每个空格替换成"%20"。
+ * 例如输入“We are happy.”​，
+ * 则输出“We%20are%20happy.”​。 
+ */
 function replaceBlank(obj) {
     const blank = ' ';
     let str = obj.str;

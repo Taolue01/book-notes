@@ -2,6 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 
+/** Question 4
+ * 请实现一个函数，把字符串中的每个空格替换成"%20"。
+ * 例如输入“We are happy.”​，
+ * 则输出“We%20are%20happy.”​。 
+ */
 /**
  * 时间复杂度 O(n2)
  */
@@ -11,8 +16,8 @@ char * replaceBlankOn2(char * string);
 */
 char * replaceBlankOn(char * string);
 
-// test
-void test();
+// test function
+void testCase();
 
 int main(int argc, char const *argv[])
 {
@@ -21,12 +26,12 @@ int main(int argc, char const *argv[])
     printf("%s \n", string);
     printf("result: %s \n", replaceBlankOn2(string));
     printf("result: %s \n", replaceBlankOn(string));
-
-    test();
+    // test this function;
+    testCase();
     return 0;
 }
 
-void test() {
+void testCase() {
     char * string = (char *)malloc(sizeof(char)*50);
     strcpy(string, "We are happy");
     printf("replaceBlankOn result: %s \n", replaceBlankOn(string));
@@ -123,4 +128,13 @@ char * replaceBlankOn(char * str) {
     }
 
     return str;
+}
+
+/**
+ *  相关题目
+ * 有两个排序的数组A1和A2，内存在A1 的末尾有足够多的空余空间容纳A2。
+ * 请实现一个函数，把A2中的所有数字插入到A1中并且所有的数字是排序的。
+ */
+int * insertAndSort(int * a1, int * a2, int length) {
+
 }
