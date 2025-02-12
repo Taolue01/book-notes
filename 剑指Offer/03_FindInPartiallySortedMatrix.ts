@@ -75,16 +75,47 @@ function findInMatrix2(matrix: number[][], rows: number, columns: number, num: n
     return result;
 }
 
+function findTargetIn2DPlants(plants: number[][], target: number): boolean {
+    let loop = true, result = false;
+    let row = 0;
+    let column = plants[0]?.length - 1;
+    if (plants == null || plants.length <= 0 || plants[0][0] > target || 
+        plants[plants?.length - 1][column] < target) {
+        loop = false;
+    }
+    while(loop) {
+        let tempValue = plants[row][column];
+        if (tempValue === target) {
+            result = true;
+            break;
+        } else if (tempValue > target) {
+            column = column - 1;
+        } else {
+            row = row + 1;
+        }
 
-const matrix = [
-    [1, 2, 8, 9], 
-    [2, 4, 9, 12], 
-    [4, 7, 10, 13], 
-    [6, 8, 11, 15]], n = 7;
+        if (row >= plants.length || column < 0) {
+            loop = false;
+        }
+    }
 
-const result = findInMatrix(matrix, 4, 4, n);
-const result2 = findInMatrix2(matrix, 4, 4, n);
-console.log(result, result2);
+    return result;
+
+};
+
+function main() {
+    const matrix = [
+        [1, 2, 8, 9], 
+        [2, 4, 9, 12], 
+        [4, 7, 10, 13], 
+        [6, 8, 11, 15]], n = 7;
+    
+    const result = findInMatrix(matrix, 4, 4, n);
+    const result2 = findInMatrix2(matrix, 4, 4, n);
+    console.log(result, result2);
+}
+
+main();
 
 
 
